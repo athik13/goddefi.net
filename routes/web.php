@@ -24,6 +24,16 @@ Route::get('/', function () {
     return view('welcome', compact('categories', 'courses'));
 });
 
+Route::get('/course/all', function() {
+    $categories = Category::all();
+    $courses = Course::with('category')->get();
+    return view('course-all', compact('categories', 'courses'));
+});
+
+Route::get('/course/{course}', function(Course $course) {
+    return view('course-detail', compact('course'));
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -34,4 +44,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
     });
     Route::resource('course', CourseController::class);
     Route::resource('category', CategoryController::class);
+});
+
+Route::get('blog', function() {
+    return view('blog-all');
+});
+
+Route::get('blog-single', function() {
+    return view('blog-single');
+});
+
+Route::get('contact-us', function() {
+    return view('contact-us');
 });

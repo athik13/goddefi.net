@@ -29,10 +29,10 @@
                             <a href="{{ url('/course/all') }}">Courses</a>
                         </li>
                         <li>
-                            <a href="{{ url('/course/all') }}">Blog</a>
+                            <a href="{{ url('/blog') }}">Blog</a>
                         </li>
                         <li>
-                            <a href="{{ url('/course/all') }}">Contact Us</a>
+                            <a href="{{ url('/contact-us') }}">Contact Us</a>
                         </li>
                     </ul>
                     <div class="menu_side_area">

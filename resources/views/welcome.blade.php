@@ -82,7 +82,7 @@
                     <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div class="nft__item">
                             <div class="author_list_pp">
-                                <a href="author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: James">                                    
+                                <a href="{{ url('/course') }}/{{ $course->slug }}" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: James">                                    
                                     <img class="lazy" src="/images/author/author-2.jpg" alt="">
                                     <i class="fa fa-check"></i>
                                 </a>
@@ -98,12 +98,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#">
+                                <a href="{{ url('/course') }}/{{ $course->slug }}">
                                     <img src="{{ str_replace("public", "storage", $course->banner_url) }}" class="lazy nft__item_preview" alt="">
                                 </a>
                             </div>
                             <div class="nft__item_info">
-                                <a href="#">
+                                <a href="{{ url('/course') }}/{{ $course->slug }}">
                                     <h4>{{ $course->name }}</h4>
                                 </a>
                                 <div class="nft__item_click">
