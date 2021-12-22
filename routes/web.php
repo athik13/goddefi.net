@@ -38,13 +38,13 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
-    Route::get('/', function() {
-        return redirect('admin/category');
-    });
-    Route::resource('course', CourseController::class);
-    Route::resource('category', CategoryController::class);
-});
+// Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
+//     Route::get('/', function() {
+//         return redirect('admin/category');
+//     });
+//     Route::resource('course', CourseController::class);
+//     Route::resource('category', CategoryController::class);
+// });
 
 Route::get('blog', function() {
     return view('blog-all');
